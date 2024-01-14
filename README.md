@@ -3,7 +3,7 @@
 ### Set Configuration
 1. Reference for Ultrasound sensor
 2. Configuration for Reflection
-3. Objects (car, object, sensor, ...)
+3. Create Objects and Configuration (car, object, sensor, ...)
 
 ### Run Simulation
 
@@ -45,6 +45,8 @@ Developers can add their application in './core/application'.
 
 ## Core - Engine
 
-## Core - Aplication
+## Core - Application
 Developers can add their application in './core/application'. 
 This project is focused on automotive application developers. You can adapt this on your research project.
+
+### How to check Application result
