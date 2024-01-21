@@ -42,6 +42,8 @@ If every calculation(simulation) is done, result will be updated on GUI.
 Developers can add their application in './core/application'. 
 
 ## GUI
+https://www.figma.com/file/I6OEdddZGfWmW41yYO2ETW/Ultrasonic-Sensor-Simulator?type=design&node-id=0%3A1&mode=design&t=p7JIrMLv6NiqWr52-1
+wireframe for this project.
 
 ## Core - Engine
 
