@@ -1,4 +1,44 @@
+:root{
+    /* Ratio Between Plot Area and Scroll Bar. Default is 95:5 and It is recommended to set 100% total. */
+    --plotAreaRatio: 95%;
+    --scrollBarRatio: 5%;
+
+    /* Menu Bar Width. Default is 300px. */
+    --menuBarWidth: 300px;
+}
+
+#pageLayout{
+    width:100%;
+    height:100%;
+    display:flex;
+    background-color: yellow;
+}
+
+#menuBar {
+    position: fixed;
+    width: var(--menuBarWidth);
+    height: var(--plotAreaRatio);
+    background-color: green;
+}
+
+#mainContainer{
+    width:100%;
+    height:100%;
+    background-color: orange;
+}
+
+#canvasContainer{
+    width:100%;
+    height:var(--plotAreaRatio);
+}
+
 #plotArea {
     width: 100%;
     height: 100%;
+    background-color: red;
+}
+
+#scrollBar {
+    height: var(--scrollBarRatio);
+    background-color: blue;
 }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Normal Distribution in JavaScript</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="normalDistributionCanvas" width="400" height="200"></canvas>
+
+  <script>
+    // Function to calculate the probability density function (PDF) of the normal distribution
+    function normalDistribution(x, mean, stdDev) {
+      return Math.exp(-0.5 * Math.pow((x - mean) / stdDev, 2)) / (stdDev * Math.sqrt(2 * Math.PI));
+    }
+
+    // Function to draw the normal distribution curve on a canvas
+    function drawNormalDistribution(canvasId, mean, stdDev) {
+      const canvas = document.getElementById(canvasId);
+      const ctx = canvas.getContext('2d');
+      const width = canvas.width;
+      const height = canvas.height;
+
+      ctx.clearRect(0, 0, width, height);
+
+      ctx.beginPath();
+
+      // Draw the curve by connecting points with small line segments
+      for (let x = 0; x < width; x++) {
+        const normalizedX = x / width; // 0~1
+        const zScore = (normalizedX - 0.5) * 100; // -2~2
+        const y = height - normalDistribution(zScore, mean, stdDev) * height - 10;
+
+        if (x === 0) {
+          ctx.moveTo(x, y);
+        } else {
+          ctx.lineTo(x, y);
+        }
+      }
+
+      ctx.strokeStyle = '#3498db'; // Blue color
+      ctx.lineWidth = 2;
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+    // Example usage
+    const mean = 0; // Mean of the normal distribution
+    const stdDev = 1; // Standard deviation of the normal distribution
+    drawNormalDistribution('normalDistributionCanvas', mean, stdDev);
+  </script>
+</body>
+
+</html>
