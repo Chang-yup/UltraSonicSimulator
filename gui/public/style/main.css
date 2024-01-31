@@ -3,28 +3,40 @@
     --plotAreaRatio: 95%;
     --scrollBarRatio: 5%;
 
-    /* Menu Bar Width. Default is 300px. */
-    --menuBarWidth: 300px;
+    /* Menu Bar Width. Default is 18%. */
+    --menuBarWidth: 20%;
+}
+
+body *{
+    box-shadow: 0 0 0 2px #202020 inset;
 }
 
 #pageLayout{
     width:100%;
     height:100%;
     display:flex;
-    background-color: yellow;
 }
 
 #menuBar {
     position: fixed;
     width: var(--menuBarWidth);
     height: var(--plotAreaRatio);
-    background-color: green;
+}
+
+#controlButtonContainer {
+    display:flex;
+    flex-wrap: wrap;
+    min-height: 50px;
+    height: var(--scrollBarRatio);
+}
+
+.controlButton {
+    width:50px;
 }
 
 #mainContainer{
     width:100%;
     height:100%;
-    background-color: orange;
 }
 
 #canvasContainer{
@@ -35,10 +47,8 @@
 #plotArea {
     width: 100%;
     height: 100%;
-    background-color: red;
 }
 
 #scrollBar {
     height: var(--scrollBarRatio);
-    background-color: blue;
 }
